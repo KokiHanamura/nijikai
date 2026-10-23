@@ -191,6 +191,28 @@
   .pin { position: absolute; top: 20px; right: 20px; width: 34px; color: var(--accent); animation: bob 2.4s ease-in-out infinite; }
   @keyframes bob { 50% { transform: translateY(-6px); } }
 
+  /* ---------- toast ---------- */
+  .toast {
+    display: grid; grid-template-columns: minmax(0, 42%) minmax(0, 1fr); gap: 20px; align-items: center;
+    background: var(--surface); border: 1px solid var(--line); border-radius: 28px; padding: 16px; box-shadow: var(--shadow);
+  }
+  .toast-photo { position: relative; margin: 0; }
+  .toast-photo img {
+    width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 30%; display: block;
+    border-radius: 20px; rotate: -3deg; box-shadow: var(--shadow); border: 4px solid var(--surface);
+  }
+  .toast-photo .sticker {
+    position: absolute; right: -10px; bottom: -8px; rotate: 8deg;
+    padding: 6px 12px; border-radius: 999px; background: var(--accent); color: var(--accent-ink);
+    font-family: "Fraunces", serif; font-style: italic; font-size: 1rem; box-shadow: var(--shadow);
+  }
+  .toast-body .eyebrow { display: block; margin-bottom: 8px; }
+  .toast-name { margin: 0; font-size: clamp(1.4rem, 6.5vw, 1.9rem); font-weight: 700; line-height: 1.3; }
+  .toast-role {
+    display: inline-block; margin-top: 12px; padding: 4px 12px; border-radius: 999px;
+    background: var(--sage); font-size: .78rem; font-weight: 700; letter-spacing: .08em;
+  }
+
   /* ---------- timeline ---------- */
   .timeline { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
   .timeline li {
@@ -331,6 +353,21 @@
           <span class="arrow" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </div>
       </a>
+    </div>
+  </section>
+
+  <section aria-labelledby="toast">
+    <div class="section-head reveal"><h2 class="serif" id="toast">Toast</h2><span class="eyebrow">乾杯のご挨拶</span></div>
+    <div class="toast reveal">
+      <figure class="toast-photo">
+        <img src="toast.jpg" alt="松本祐太郎さんの写真" width="800" height="1000" loading="lazy">
+        <span class="sticker">Cheers!</span>
+      </figure>
+      <div class="toast-body">
+        <span class="eyebrow">Kanpai Speech</span>
+        <p class="toast-name mincho">松本 祐太郎</p>
+        <span class="toast-role">新郎 高校の友人</span>
+      </div>
     </div>
   </section>
 
