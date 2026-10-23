@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f6f1ea" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#16120f" media="(prefers-color-scheme: dark)">
+<title>二次会のご案内</title>
+<meta name="description" content="渡邊家・小原家の結婚をお祝いする二次会のご案内（友人有志による非公式ページ）">
+<meta property="og:title" content="祝ご結婚🥂 二次会のご案内">
+<meta property="og:description" content="2026.10.24 SAT 15:00〜">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..600,0..100;1,9..144,300..600,0..100&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Shippori+Mincho+B1:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: oklch(96.5% 0.012 75);
+    --surface: oklch(99% 0.006 75);
+    --surface-2: oklch(93% 0.02 70);
+    --ink: oklch(26% 0.02 40);
+    --muted: oklch(52% 0.02 50);
+    --accent: oklch(62% 0.1 65);
+    --accent-ink: oklch(99% 0.01 75);
+    --blush: oklch(84% 0.06 25);
+    --sage: oklch(82% 0.04 140);
+    --line: oklch(88% 0.015 70);
+    --glass: oklch(99% 0.006 75 / .62);
+    --shadow: 0 1px 2px oklch(30% 0.03 50 / .06), 0 12px 32px -12px oklch(30% 0.03 50 / .18);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: oklch(17% 0.012 50);
+      --surface: oklch(22% 0.014 50);
+      --surface-2: oklch(27% 0.018 55);
+      --ink: oklch(94% 0.012 75);
+      --muted: oklch(70% 0.02 65);
+      --accent: oklch(78% 0.1 75);
+      --accent-ink: oklch(20% 0.02 50);
+      --blush: oklch(45% 0.07 25);
+      --sage: oklch(42% 0.04 140);
+      --line: oklch(32% 0.015 55);
+      --glass: oklch(22% 0.014 50 / .6);
+      --shadow: 0 1px 2px oklch(0% 0 0 / .3), 0 16px 40px -16px oklch(0% 0 0 / .6);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: oklch(17% 0.012 50);
+    --surface: oklch(22% 0.014 50);
+    --surface-2: oklch(27% 0.018 55);
+    --ink: oklch(94% 0.012 75);
+    --muted: oklch(70% 0.02 65);
+    --accent: oklch(78% 0.1 75);
+    --accent-ink: oklch(20% 0.02 50);
+    --blush: oklch(45% 0.07 25);
+    --sage: oklch(42% 0.04 140);
+    --line: oklch(32% 0.015 55);
+    --glass: oklch(22% 0.014 50 / .6);
+    --shadow: 0 1px 2px oklch(0% 0 0 / .3), 0 16px 40px -16px oklch(0% 0 0 / .6);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; interpolate-size: allow-keywords; -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Zen Kaku Gothic New", system-ui, sans-serif;
+    line-height: 1.85;
+    letter-spacing: .03em;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: clip;
+  }
+  .serif { font-family: "Fraunces", serif; font-variation-settings: "SOFT" 100; letter-spacing: -.01em; }
+  .mincho { font-family: "Shippori Mincho B1", serif; }
+  .eyebrow { font-size: .7rem; font-weight: 700; letter-spacing: .32em; text-transform: uppercase; color: var(--muted); }
+  a { color: inherit; }
+
+  /* ---------- scroll progress ---------- */
+  .progress {
+    position: fixed; inset: 0 0 auto; height: 3px; z-index: 30;
+    background: linear-gradient(90deg, var(--blush), var(--accent));
+    transform-origin: 0 50%; transform: scaleX(0);
+  }
+  @supports (animation-timeline: scroll()) {
+    .progress { animation: grow linear both; animation-timeline: scroll(root); }
+    @keyframes grow { to { transform: scaleX(1); } }
+  }
+
+  /* ---------- hero ---------- */
+  .hero {
+    position: relative; min-height: 100svh; display: grid; align-items: end;
+    padding: 0 16px calc(120px + env(safe-area-inset-bottom));
+    color: #fff; overflow: hidden; isolation: isolate;
+  }
+  .hero-bg { position: absolute; inset: 0; z-index: -2; background: oklch(35% 0.04 45); }
+  .blob { position: absolute; width: 70vmax; aspect-ratio: 1; border-radius: 50%; filter: blur(60px); opacity: .85; }
+  .blob.a { background: oklch(72% 0.1 50); top: -25vmax; left: -20vmax; animation: float-a 18s ease-in-out infinite alternate; }
+  .blob.b { background: oklch(65% 0.09 20); bottom: -30vmax; right: -25vmax; animation: float-b 22s ease-in-out infinite alternate; }
+  .blob.c { background: oklch(70% 0.05 130); width: 45vmax; top: 30%; left: 30%; animation: float-a 26s ease-in-out infinite alternate-reverse; }
+  @keyframes float-a { to { transform: translate(12vmax, 10vmax) scale(1.1); } }
+  @keyframes float-b { to { transform: translate(-10vmax, -14vmax) scale(.9); } }
+  .hero::after {
+    content: ""; position: absolute; inset: 0; z-index: -1;
+    background: linear-gradient(to bottom, oklch(0% 0 0 / 0) 30%, oklch(15% 0.02 40 / .7));
+  }
+  .hero-inner { max-width: 640px; margin: 0 auto; width: 100%; }
+  .hero .eyebrow { color: oklch(100% 0 0 / .85); }
+  .hero h1 {
+    margin: .15em 0 .2em; font-weight: 300; line-height: .92;
+    font-size: clamp(3.6rem, 19vw, 8rem);
+    font-variation-settings: "SOFT" 100, "opsz" 144;
+  }
+  .hero h1 em { font-style: italic; font-weight: 400; display: block; padding-left: .6em; }
+  .hero h1 .line { display: block; overflow: clip; padding-bottom: .06em; }
+  .hero h1 .line > span { display: inline-block; animation: rise 1.2s cubic-bezier(.2,.7,.1,1) both; }
+  .hero h1 .line:nth-child(2) > span { animation-delay: .15s; }
+  @keyframes rise { from { transform: translateY(105%); } }
+  .hero-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; animation: fade 1s .6s both; }
+  @keyframes fade { from { opacity: 0; transform: translateY(8px); } }
+  .chip {
+    display: inline-flex; align-items: center; gap: .5em; padding: 8px 14px; border-radius: 999px;
+    background: oklch(100% 0 0 / .14); border: 1px solid oklch(100% 0 0 / .28);
+    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    font-size: .85rem; font-weight: 500; letter-spacing: .08em;
+  }
+  .hero-sub { margin: 18px 0 0; font-size: .95rem; letter-spacing: .25em; animation: fade 1s .45s both; }
+
+  /* ---------- marquee ---------- */
+  .marquee { overflow: clip; border-block: 1px solid var(--line); background: var(--surface); padding: 14px 0; }
+  .marquee-track { display: flex; width: max-content; animation: slide 36s linear infinite; }
+  .marquee span { font-size: 1.4rem; font-style: italic; white-space: nowrap; padding-right: 1.4em; color: var(--muted); }
+  .marquee span b { color: var(--accent); font-weight: 400; }
+  @keyframes slide { to { transform: translateX(-50%); } }
+
+  /* ---------- layout ---------- */
+  main { max-width: 640px; margin: 0 auto; padding: 0 16px 140px; }
+  section { padding-top: 72px; }
+  .section-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 20px; }
+  .section-head h2 { margin: 0; font-size: clamp(2.2rem, 10vw, 3rem); font-weight: 300; font-style: italic; line-height: 1; }
+  .section-head .eyebrow { white-space: nowrap; }
+
+  .lead { font-size: 1.05rem; line-height: 2.2; margin: 0; }
+  .lead + .lead { margin-top: 1.2em; }
+  .sign { margin-top: 24px; color: var(--muted); font-size: .85rem; letter-spacing: .2em; }
+
+  /* ---------- bento ---------- */
+  .bento { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .tile {
+    container-type: inline-size;
+    background: var(--surface); border: 1px solid var(--line); border-radius: 24px;
+    padding: 20px; box-shadow: var(--shadow); position: relative; overflow: hidden;
+  }
+  .tile.span-2 { grid-column: span 2; }
+  .tile .eyebrow { display: block; margin-bottom: 6px; }
+  .tile-date { background: var(--blush); border-color: transparent; }
+  .tile-time { background: var(--sage); border-color: transparent; }
+  .tile-date .eyebrow, .tile-time .eyebrow { color: var(--ink); opacity: .65; }
+  .tile-big { font-size: clamp(2.6rem, 34cqi, 4rem); font-weight: 400; line-height: 1; margin: 0; font-variation-settings: "SOFT" 100, "opsz" 144; }
+  .tile-small { margin: 8px 0 0; font-size: .85rem; }
+
+  .countdown { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; text-align: center; }
+  .countdown b { display: block; font-family: "Fraunces", serif; font-weight: 400; font-size: clamp(1.8rem, 13cqi, 2.8rem); line-height: 1.1; font-variant-numeric: tabular-nums; }
+  .countdown small { font-size: .62rem; letter-spacing: .2em; color: var(--muted); font-weight: 700; }
+  .countdown-live { display: flex; align-items: center; gap: 10px; font-size: 1.05rem; font-weight: 500; }
+  .pulse { width: 10px; height: 10px; border-radius: 50%; background: oklch(65% 0.2 25); box-shadow: 0 0 0 0 oklch(65% 0.2 25 / .6); animation: pulse 1.6s infinite; }
+  @keyframes pulse { to { box-shadow: 0 0 0 12px oklch(65% 0.2 25 / 0); } }
+
+  .tile-map {
+    display: flex; flex-direction: column; justify-content: space-between; gap: 28px; min-height: 200px;
+    text-decoration: none; color: var(--accent-ink); background: var(--ink); border-color: transparent;
+  }
+  .tile-map .eyebrow { color: var(--accent-ink); opacity: .65; }
+  .tile-map .map-title { font-size: clamp(1.5rem, 7.5cqi, 2rem); font-weight: 700; line-height: 1.35; margin: 0; padding-right: 44px; }
+  .tile-map .map-title small { display: block; font-size: .5em; font-weight: 500; color: var(--accent); letter-spacing: .15em; }
+  .tile-map address { font-style: normal; font-size: .85rem; opacity: .75; margin-top: 10px; line-height: 1.6; }
+  .map-cta { display: flex; align-items: center; justify-content: space-between; font-size: .9rem; font-weight: 500; }
+  .arrow {
+    width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center;
+    background: var(--accent); color: var(--ink); transition: transform .35s cubic-bezier(.2,.7,.1,1);
+  }
+  .tile-map:hover .arrow, .tile-map:focus-visible .arrow { transform: rotate(-45deg) scale(1.08); }
+  .tile-map::before {
+    content: ""; position: absolute; inset: 0; opacity: .14; pointer-events: none;
+    background-image:
+      linear-gradient(var(--accent-ink) 1px, transparent 1px),
+      linear-gradient(90deg, var(--accent-ink) 1px, transparent 1px);
+    background-size: 28px 28px;
+    mask-image: radial-gradient(circle at 85% 20%, #000, transparent 70%);
+  }
+  .pin { position: absolute; top: 20px; right: 20px; width: 34px; color: var(--accent); animation: bob 2.4s ease-in-out infinite; }
+  @keyframes bob { 50% { transform: translateY(-6px); } }
+
+  /* ---------- timeline ---------- */
+  .timeline { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+  .timeline li {
+    display: grid; grid-template-columns: 72px 1fr; gap: 14px; align-items: center;
+    padding: 16px 18px; border-radius: 20px; background: var(--surface); border: 1px solid var(--line);
+  }
+  .timeline time { font-family: "Fraunces", serif; font-size: 1.6rem; font-weight: 300; line-height: 1; color: var(--accent); }
+  .timeline strong { display: block; font-weight: 700; }
+  .timeline small { display: block; color: var(--muted); font-size: .8rem; line-height: 1.6; }
+  .timeline li.done { opacity: .5; }
+  .timeline li.now { background: var(--ink); color: var(--accent-ink); border-color: transparent; }
+  .timeline li.now small { color: var(--accent-ink); opacity: .7; }
+  .timeline li.now strong::after {
+    content: "NOW"; margin-left: 8px; padding: 2px 8px; border-radius: 999px; font-size: .6rem; letter-spacing: .2em;
+    background: var(--accent); color: var(--ink); vertical-align: middle;
+  }
+
+  /* ---------- wedding details ---------- */
+  .details-card { background: var(--surface); border: 1px solid var(--line); border-radius: 24px; overflow: hidden; }
+  .details-card summary {
+    list-style: none; cursor: pointer; padding: 20px; display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  }
+  .details-card summary::-webkit-details-marker { display: none; }
+  .details-card summary h3 { margin: 0; font-size: 1.1rem; font-weight: 700; }
+  .details-card summary p { margin: 0; font-size: .8rem; color: var(--muted); }
+  .plus { width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--line); display: grid; place-items: center; flex: none; transition: transform .3s; }
+  .details-card[open] .plus { transform: rotate(45deg); }
+  .details-card::details-content { block-size: 0; overflow: clip; transition: block-size .4s, content-visibility .4s allow-discrete; }
+  .details-card[open]::details-content { block-size: auto; }
+  .details-body { padding: 0 20px 20px; border-top: 1px solid var(--line); }
+  .details-body dl { margin: 16px 0 0; display: grid; gap: 14px; }
+  .details-body dt { font-size: .7rem; font-weight: 700; letter-spacing: .2em; color: var(--muted); }
+  .details-body dd { margin: 0; }
+  .links { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 4px; }
+  .links a {
+    padding: 8px 14px; border-radius: 999px; background: var(--surface-2); text-decoration: none; font-size: .85rem; font-weight: 500;
+  }
+
+  footer { text-align: center; padding: 24px 16px 160px; color: var(--muted); }
+  footer .serif { font-size: clamp(2.6rem, 14vw, 4rem); font-style: italic; font-weight: 300; color: var(--ink); line-height: 1; display: block; margin-bottom: 8px; }
+  footer .footnote { margin: 28px auto 0; max-width: 28em; font-size: .72rem; line-height: 1.7; }
+
+  /* ---------- floating dock ---------- */
+  .dock {
+    position: fixed; z-index: 20; left: 50%; bottom: calc(16px + env(safe-area-inset-bottom));
+    translate: -50% 0; display: flex; align-items: center; gap: 6px; padding: 6px;
+    width: min(420px, calc(100% - 32px));
+    background: var(--glass); border: 1px solid var(--line); border-radius: 999px;
+    backdrop-filter: blur(20px) saturate(1.4); -webkit-backdrop-filter: blur(20px) saturate(1.4);
+    box-shadow: var(--shadow);
+    animation: dock-in .8s 1s cubic-bezier(.2,.7,.1,1) both;
+  }
+  @keyframes dock-in { from { translate: -50% 140%; } }
+  .dock-info { flex: 1; min-width: 0; padding-left: 14px; line-height: 1.3; }
+  .dock-info b { display: block; font-size: .9rem; }
+  .dock-info span { font-size: .72rem; color: var(--muted); }
+  .dock a {
+    display: inline-flex; align-items: center; gap: 6px; padding: 12px 18px; border-radius: 999px;
+    background: var(--ink); color: var(--accent-ink); text-decoration: none; font-weight: 700; font-size: .85rem; white-space: nowrap;
+  }
+  .dock svg { width: 16px; height: 16px; }
+
+  /* ---------- reveal ---------- */
+  .reveal { opacity: 0; translate: 0 24px; transition: opacity .9s, translate .9s cubic-bezier(.2,.7,.1,1); }
+  .reveal.shown { opacity: 1; translate: 0 0; }
+  @supports (animation-timeline: view()) {
+    .reveal, .reveal.shown { opacity: 1; translate: 0 0; transition: none; animation: reveal linear both; animation-timeline: view(); animation-range: entry 0% entry 60%; }
+    @keyframes reveal { from { opacity: 0; translate: 0 32px; scale: .98; } }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+    .reveal { opacity: 1; translate: 0 0; }
+  }
+</style>
+</head>
+<body>
+<div class="progress" aria-hidden="true"></div>
+
+<header class="hero">
+  <div class="hero-bg" aria-hidden="true"><div class="blob a"></div><div class="blob b"></div><div class="blob c"></div></div>
+  <div class="hero-inner">
+    <span class="eyebrow">Happy Wedding</span>
+    <h1 class="serif"><span class="line"><span>Congrats,</span></span><span class="line"><span><em>you two!</em></span></span></h1>
+    <p class="hero-sub mincho">おふたりの結婚を、もう一回祝おう</p>
+    <div class="hero-meta">
+      <span class="chip">2026.10.24 SAT</span>
+      <span class="chip">二次会 15:00 –</span>
+      <span class="chip">友人有志の非公式ページ</span>
+    </div>
+  </div>
+</header>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track serif">
+    <span>Congratulations <b>✦</b> Watanabe &amp; Obara <b>✦</b> Happy Wedding <b>✦</b> After Party 15:00 <b>✦</b></span>
+    <span>Congratulations <b>✦</b> Watanabe &amp; Obara <b>✦</b> Happy Wedding <b>✦</b> After Party 15:00 <b>✦</b></span>
+    <span>Congratulations <b>✦</b> Watanabe &amp; Obara <b>✦</b> Happy Wedding <b>✦</b> After Party 15:00 <b>✦</b></span>
+    <span>Congratulations <b>✦</b> Watanabe &amp; Obara <b>✦</b> Happy Wedding <b>✦</b> After Party 15:00 <b>✦</b></span>
+  </div>
+</div>
+
+<main>
+  <section class="reveal" aria-labelledby="msg">
+    <div class="section-head"><h2 class="serif" id="msg">Hello!</h2><span class="eyebrow">このページについて</span></div>
+    <p class="lead mincho">挙式・披露宴、おつかれさまでした！<br>おふたり、本当におめでとう🎉</p>
+    <p class="lead mincho">このページは、ふたりの友人が勝手に作った二次会の案内です。会場と時間をまとめたので、迷ったときに開いてください。</p>
+    <p class="lead mincho">ここからは少しくだけた雰囲気で、みんなでおふたりをもう一度お祝いしましょう🥂</p>
+    <p class="sign">新郎新婦の友人有志より</p>
+  </section>
+
+  <section aria-labelledby="info">
+    <div class="section-head reveal"><h2 class="serif" id="info">Information</h2><span class="eyebrow">二次会</span></div>
+    <div class="bento">
+      <div class="tile tile-date reveal">
+        <span class="eyebrow">Date</span>
+        <p class="tile-big serif">10.24</p>
+        <p class="tile-small">2026年10月24日(土)</p>
+      </div>
+      <div class="tile tile-time reveal">
+        <span class="eyebrow">Open</span>
+        <p class="tile-big serif">15:00</p>
+        <p class="tile-small">開始</p>
+      </div>
+      <div class="tile span-2 reveal">
+        <span class="eyebrow">Countdown — 二次会まで</span>
+        <div id="countdown" aria-live="polite"></div>
+      </div>
+      <a class="tile tile-map span-2 reveal" href="https://maps.app.goo.gl/1KfA4tU1dPRks8F67?g_st=ipc" target="_blank" rel="noopener">
+        <svg class="pin" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a7.5 7.5 0 0 0-7.5 7.5C4.5 15.1 12 22 12 22s7.5-6.9 7.5-12.5A7.5 7.5 0 0 0 12 2Zm0 10.2a2.7 2.7 0 1 1 0-5.4 2.7 2.7 0 0 1 0 5.4Z"/></svg>
+        <div>
+          <span class="eyebrow">Venue — 二次会会場</span>
+          <p class="map-title mincho"><small>小籠包専門店</small>王府井酒家</p>
+          <address>〒231-0023<br>神奈川県横浜市中区山下町152-2</address>
+        </div>
+        <div class="map-cta">
+          <span>Googleマップで会場を開く</span>
+          <span class="arrow" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section aria-labelledby="sch">
+    <div class="section-head reveal"><h2 class="serif" id="sch">Schedule</h2><span class="eyebrow">当日の流れ</span></div>
+    <ol class="timeline" id="timeline">
+      <li class="reveal" data-start="2026-10-24T10:30:00+09:00" data-end="2026-10-24T11:30:00+09:00">
+        <time class="serif">10:30</time>
+        <div><strong>挙式</strong><small>スカイチャペル（タワー館18階）</small></div>
+      </li>
+      <li class="reveal" data-start="2026-10-24T11:30:00+09:00" data-end="2026-10-24T15:00:00+09:00">
+        <time class="serif">11:30</time>
+        <div><strong>披露宴</strong><small>ホテルニューグランド</small></div>
+      </li>
+      <li class="reveal" data-start="2026-10-24T15:00:00+09:00" data-end="2026-10-25T00:00:00+09:00">
+        <time class="serif">15:00</time>
+        <div><strong>二次会</strong><small>小籠包専門店 王府井酒家（横浜中華街・山下町）</small></div>
+      </li>
+    </ol>
+  </section>
+
+  <section aria-labelledby="wed">
+    <div class="section-head reveal"><h2 class="serif" id="wed">Wedding</h2><span class="eyebrow">挙式・披露宴のおさらい</span></div>
+    <details class="details-card reveal">
+      <summary>
+        <div><h3>ホテルニューグランド</h3><p>挙式 10:30〜 ／ 披露宴 11:30〜</p></div>
+        <span class="plus" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+      </summary>
+      <div class="details-body">
+        <dl>
+          <div><dt>CHAPEL</dt><dd>スカイチャペル（タワー館18階）<br>10:25までに直接お越しください</dd></div>
+          <div><dt>ACCESS</dt><dd>みなとみらい線「元町・中華街駅」1番出口より徒歩約1分</dd></div>
+          <div><dt>LINKS</dt><dd class="links">
+            <a href="https://maps.app.goo.gl/93foi5HHk3dfCKnw6?g_st=ipc" target="_blank" rel="noopener">Googleマップ ↗</a>
+            <a href="https://www.hotel-newgrand.co.jp/access/" target="_blank" rel="noopener">公式HP ↗</a>
+          </dd></div>
+        </dl>
+      </div>
+    </details>
+  </section>
+</main>
+
+<footer>
+  <span class="serif">Congrats!</span>
+  <span class="mincho">渡邊家・小原家 ご結婚おめでとうございます</span>
+  <p class="footnote">Made with ♡ by friends — 新郎新婦の友人有志が作った非公式ページです</p>
+</footer>
+
+<nav class="dock" aria-label="二次会会場">
+  <div class="dock-info"><b>二次会 15:00〜</b><span>王府井酒家</span></div>
+  <a href="https://maps.app.goo.gl/1KfA4tU1dPRks8F67?g_st=ipc" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a7.5 7.5 0 0 0-7.5 7.5C4.5 15.1 12 22 12 22s7.5-6.9 7.5-12.5A7.5 7.5 0 0 0 12 2Zm0 10.2a2.7 2.7 0 1 1 0-5.4 2.7 2.7 0 0 1 0 5.4Z"/></svg>
+    地図を開く
+  </a>
+</nav>
+
+<script>
+  const PARTY_START = new Date("2026-10-24T15:00:00+09:00");
+
+  // Countdown
+  const cd = document.getElementById("countdown");
+  function tick() {
+    const diff = PARTY_START - Date.now();
+    if (diff <= 0) {
+      cd.innerHTML = '<p class="countdown-live"><span class="pulse"></span>ただいま開催中です🥂</p>';
+      return;
+    }
+    const s = Math.floor(diff / 1000);
+    const parts = [[Math.floor(s / 86400), "DAYS"], [Math.floor(s / 3600) % 24, "HRS"], [Math.floor(s / 60) % 60, "MIN"], [s % 60, "SEC"]];
+    cd.innerHTML = '<div class="countdown">' + parts.map(([v, l]) => `<div><b>${String(v).padStart(2, "0")}</b><small>${l}</small></div>`).join("") + "</div>";
+    setTimeout(tick, 1000);
+  }
+  tick();
+
+  // Mark past / current parts of the day
+  const now = Date.now();
+  document.querySelectorAll("#timeline li").forEach(li => {
+    if (now >= Date.parse(li.dataset.end)) li.classList.add("done");
+    else if (now >= Date.parse(li.dataset.start)) li.classList.add("now");
+  });
+
+  // Reveal fallback for browsers without scroll-driven animations
+  if (!CSS.supports("animation-timeline: view()")) {
+    const io = new IntersectionObserver(entries => entries.forEach(en => {
+      if (en.isIntersecting) { en.target.classList.add("shown"); io.unobserve(en.target); }
+    }), { threshold: .12 });
+    document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+  }
+</script>
+</body>
+</html>
