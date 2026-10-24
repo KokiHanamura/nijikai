@@ -191,6 +191,29 @@
   .pin { position: absolute; top: 20px; right: 20px; width: 34px; color: var(--accent); animation: bob 2.4s ease-in-out infinite; }
   @keyframes bob { 50% { transform: translateY(-6px); } }
 
+  /* ---------- restaurant ---------- */
+  .shop-photos {
+    display: grid; grid-template-columns: 1.55fr 1fr; grid-template-rows: 1fr 1fr; gap: 8px;
+    aspect-ratio: 5 / 4; margin-bottom: 12px;
+  }
+  .shop-photos figure { margin: 0; position: relative; overflow: hidden; border-radius: 20px; background: var(--surface-2); }
+  .shop-photos figure:first-child { grid-row: span 2; }
+  .shop-photos img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .shop-photos figcaption {
+    position: absolute; left: 8px; bottom: 8px; padding: 3px 10px; border-radius: 999px;
+    background: oklch(15% 0.02 40 / .55); color: #fff; font-size: .7rem; font-weight: 700; letter-spacing: .08em;
+    backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+  }
+  .shop-card { background: var(--surface); border: 1px solid var(--line); border-radius: 24px; padding: 20px; }
+  .shop-card h3 { margin: 0; font-size: 1.35rem; line-height: 1.4; }
+  .shop-card h3 small { display: block; font-size: .75rem; color: var(--accent); letter-spacing: .15em; font-weight: 500; }
+  .shop-tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0 0; padding: 0; list-style: none; }
+  .shop-tags li { padding: 4px 12px; border-radius: 999px; background: var(--surface-2); font-size: .78rem; font-weight: 500; }
+  .shop-tags li.hot { background: var(--blush); }
+  .shop-card dl { margin: 16px 0 0; display: grid; grid-template-columns: auto 1fr; gap: 8px 16px; font-size: .9rem; }
+  .shop-card dt { font-size: .7rem; font-weight: 700; letter-spacing: .2em; color: var(--muted); padding-top: .2em; }
+  .shop-card dd { margin: 0; }
+
   /* ---------- toast ---------- */
   .toast {
     display: grid; grid-template-columns: minmax(0, 42%) minmax(0, 1fr); gap: 20px; align-items: center;
@@ -354,6 +377,27 @@
           <span class="arrow" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </div>
       </a>
+    </div>
+  </section>
+
+  <section aria-labelledby="shop">
+    <div class="section-head reveal"><h2 class="serif" id="shop">Restaurant</h2><span class="eyebrow">お店のご紹介</span></div>
+    <div class="shop-photos reveal">
+      <figure><img src="shop-xiaolongbao.jpg" alt="小籠包" width="752" height="944" loading="lazy"><figcaption>小籠包</figcaption></figure>
+      <figure><img src="shop-duck.jpg" alt="北京ダック" width="347" height="454" loading="lazy"><figcaption>北京ダック</figcaption></figure>
+      <figure><img src="shop-interior.jpg" alt="店内の様子" width="347" height="451" loading="lazy"><figcaption>店内</figcaption></figure>
+    </div>
+    <div class="shop-card reveal">
+      <h3 class="mincho"><small>小籠包専門店</small>王府井酒家</h3>
+      <ul class="shop-tags">
+        <li class="hot">名物：焼き小籠包</li>
+        <li>中華料理</li>
+        <li>横浜中華街</li>
+      </ul>
+      <dl>
+        <dt>ADDRESS</dt><dd>〒231-0023<br>神奈川県横浜市中区山下町152-2</dd>
+        <dt>MAP</dt><dd><a href="https://maps.app.goo.gl/1KfA4tU1dPRks8F67?g_st=ipc" target="_blank" rel="noopener">Googleマップで開く ↗</a></dd>
+      </dl>
     </div>
   </section>
 
